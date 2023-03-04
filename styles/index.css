@@ -1,0 +1,121 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/roboto.css);
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+.page {
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;;
+    display: grid;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 4fr;
+    background-color:aquamarine;
+}
+
+.page > * {
+    border: 1px solid;
+}
+
+.sidebar {
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: sidebar;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+}
+
+.sidebar__logo-container {
+    text-decoration: none;
+    color: #000;
+    height: 10rem;
+    display: flex;
+    font-size: 3rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.sidebar__logo {
+    object-fit: contain;
+    object-position: center;
+    height: 100%;
+}
+
+.sidebar__main {
+    list-style: none;
+    padding-left: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.sidebar__main-item {
+    text-transform: capitalize;
+    align-items: center;
+    display: flex;
+    gap: 5rem;
+    font-size: 2.5rem;
+    height: 5rem;
+    transition: all .3s ease-in-out;
+}
+
+.sidebar__main-item_active {
+    border-left: 10px solid burlywood;
+    padding-left: 2rem;
+}
+
+.sidebar__main-icon {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.sidebar__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    list-style: none;
+    padding-left: 2.5rem;
+}
+
+.sidebar__footer-item {
+    text-transform: capitalize;
+    align-items: center;
+    display: flex;
+    gap: 5rem;
+    font-size: 2.5rem;
+    height: 5rem;
+    transition: all .5s ease-in-out;
+}
+
+.sidebar__footer-icon {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+@media (hover: hover) {
+    .sidebar__main-item:hover, .sidebar__footer-item:hover {
+        cursor: pointer;
+        padding-left: 2rem;
+        border-left: 10px solid burlywood;
+    }
+}
