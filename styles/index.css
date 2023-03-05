@@ -20,11 +20,6 @@
     "sidebar main";
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 4fr;
-    background-color:aquamarine;
-}
-
-.page > * {
-    border: 1px solid;
 }
 
 .sidebar {
@@ -33,7 +28,7 @@
     flex-direction: column;
     grid-area: sidebar;
     gap: 7rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
     background: lightblue;
 }
 
@@ -113,7 +108,7 @@
     flex-direction: column;
     gap: 3rem;
     background: #fff;
-    box-shadow: 5px 0 10px 0 rgba(0, 0, 0, .5);
+    box-shadow: 10px 0 20px 0 rgba(0, 0, 0, .5);
 }
 
 .header__search {
@@ -214,6 +209,7 @@
 .buttons {
     display: grid;
     grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-auto-flow: column;
     grid-auto-columns: minmax(150px, 1fr);
     width: 50%;
     gap: 2rem;
@@ -228,6 +224,8 @@
     border: none;
     background: lightblue;
     transition: all .2s ease-in-out;
+    color: #333;
+    text-transform: capitalize;
 }
 
 .main {
@@ -237,18 +235,159 @@
     "articles announcements"
     "articles trending";
     grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    background-color: rgba(222, 222, 222, .8);
 }
 
 .articles {
     grid-area: articles;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.articles__title {
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.article-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-rows: min-content repeat(auto-fit, minmax(35rem, 1fr));
+    gap: 2rem;
+}
+
+.article {
+    min-height: 35rem;
+    border-radius: 1rem;
+    border-left: 1rem solid burlywood;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.article__title {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.article__description {
+    text-align: justify;
+    font-size: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+}
+
+.article__icons {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 4rem;
+    justify-items: center;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 1rem;
+}
+
+.article__icon {
+    object-fit: contain;
+    height: 100%;
+    object-position: center;
+    transition: all .2s ease-in-out;
 }
 
 .announcements {
     grid-area: announcements;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.announcements__title {
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.announcements-wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+    padding: 2rem;
+}
+
+.announcement__head {
+    font-size: 2rem;
+}
+
+.announcement__body {
+    font-size: 1.5rem;
 }
 
 .trending {
     grid-area: trending;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.trending__title {
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.trending-wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+    padding: 2rem;
+}
+
+.trending-account {
+    display: grid;
+    grid-template-areas:
+    "image id"
+    "image name";
+    grid-template-columns: min-content 1fr;
+    gap: 1rem 2rem;
+}
+
+.account__image {
+    grid-area: image;
+    width: 7rem;
+    height: 7rem;
+    object-fit: contain;
+    object-position: center;
+}
+
+.account__id {
+    align-self: flex-end;
+    font-size: 2.5rem;
+    grid-area: id;
+}
+
+.account__status {
+    font-size: 1.5rem;
+    grid-area: name;
 }
 
 .sidebar__main-item:hover, .sidebar__footer-item:hover {
@@ -265,4 +404,9 @@
 .button:hover {
         cursor: pointer;
         background-color: aquamarine;
+}
+
+.article__icon:hover {
+    cursor: pointer;
+    opacity: .8;
 }
