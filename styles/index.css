@@ -404,6 +404,12 @@
     opacity: .8;
 }
 
+@media only screen and (min-width: 2000px) {
+    .page {
+        grid-template-rows: 1fr 6fr;
+    }
+}
+
 @media only screen and (max-width: 1400px) {
     .sidebar {
         padding: 2rem;
