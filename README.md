@@ -1,3 +1,3 @@
 # Admin Dashboard (The Odin Project Curriculim)
 
-### [VISIT MY RESPONSIVE WORK OF ART](htttps://danieledefoe.github.io/admin-dashboard)
+### [VISIT MY RESPONSIVE WORK OF ART](https://danieledefoe.github.io/admin-dashboard/)
