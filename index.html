@@ -58,7 +58,31 @@
                 </li>
             </ul>
         </section>
-        <header class="header"></header>
+        <header class="header">
+            <section class="header__search">
+                <label for="search" class="search__label">
+                    <img src="./images/search__icon.svg" alt="search icon" loading="lazy" class="search__icon">
+                    <input type="text" class="search__bar" name="search" id="search">
+                </label>
+                <div class="profile__label">
+                    <img src="./images/header__notifications.svg" alt="notifications icon" loading="lazy" class="profile__notifications">
+                    <img src="./images/profile__image.jpg" alt="profile image" class="profile__image">
+                    <h2 class="profile__name">daniele defoe</h2>
+                </div>
+            </section>
+            <section class="header__profile">
+                <div class="greeting">
+                    <img src="./images/profile__image.jpg" alt="profile image" class="profile__image profile__image_place_greeting">
+                    <p class="greeting__text">hi there,</p>
+                    <h2 class="profile__name profile__name_place_greeting">daniele defoe (@defoe)</h2>
+                </div>
+                <ul class="buttons">
+                    <li><button class="button">new</button></li>
+                    <li><button class="button">upload</button></li>
+                    <li><button class="button">share</button></li>
+                </ul>
+            </section>
+        </header>
         <main class="main">
             <section class="articles"></section>
             <aside class="announcements"></aside>
